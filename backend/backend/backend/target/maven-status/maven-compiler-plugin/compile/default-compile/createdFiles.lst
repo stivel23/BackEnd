@@ -1,0 +1,5 @@
+com\bookingkos\backend\controller\ClientController.class
+com\bookingkos\backend\repository\ClientRepository.class
+com\bookingkos\backend\BackendApplication.class
+com\bookingkos\backend\service\ClientService.class
+com\bookingkos\backend\model\Client.class
