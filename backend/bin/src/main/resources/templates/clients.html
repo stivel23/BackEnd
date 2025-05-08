@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Daftar Client</title>
+</head>
+<body>
+<h1>Daftar Client</h1>
+<a href="add-client.html">Tambah Client</a>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Nama</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Room</th>
+        <th>Checkin</th>
+        <th>Checkout</th>
+        <th>Aksi</th>
+    </tr>
+    <tr th:each="client : ${clients}">
+        <td th:text="${client.id}"></td>
+        <td th:text="${client.name}"></td>
+        <td th:text="${client.email}"></td>
+        <td th:text="${client.phone}"></td>
+        <td th:text="${client.roomNumber}"></td>
+        <td th:text="${client.checkinDate}"></td>
+        <td th:text="${client.checkoutDate}"></td>
+        <td>
+            <a th:href="@{'/clients/edit/' + ${client.id}}">Edit</a> |
+            <a th:href="@{'/clients/delete/' + ${client.id}}"
+               onclick="return confirm('Yakin hapus data ini?')">Hapus</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
